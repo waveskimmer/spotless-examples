@@ -1,0 +1,28 @@
+plugins {
+	id 'groovy'
+	id "com.diffplug.spotless" version "6.11.0"
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+allprojects {
+	spotless {
+		java {
+			googleJavaFormat()
+			indentWithSpaces()
+			trimTrailingWhitespace()
+		}
+		groovy {
+			excludeJava()
+			greclipse()
+			indentWithSpaces()
+			trimTrailingWhitespace()
+		}
+		groovyGradle {
+			greclipse()
+		}
+	}
+}
+
+

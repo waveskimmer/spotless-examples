@@ -1,0 +1,43 @@
+plugins {
+	id 'groovy'
+	id "com.diffplug.spotless" version "6.11.0"
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.apache.groovy:groovy:4.0.5'
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+}
+
+test {
+	useJUnitPlatform()
+}
+
+// IF I comment spotless from the main build.grade, and uncomment this, it works.
+//spotless {
+//	java {
+//		googleJavaFormat()
+//		indentWithSpaces()
+//		trimTrailingWhitespace()
+//
+//		//            replaceRegex 'Remove empty lines before end of block', '\\n[\\n]+(\\s*})(?=\\n)', '\n$1'
+//		//                replaceRegex 'Remove trailing empty comment lines.', '\n\\s*\\*(\n\\s*\\*/\n)', '$1'
+//	}
+//	groovy {
+//		excludeJava()
+//		greclipse()
+//		indentWithSpaces()
+//		trimTrailingWhitespace()
+//	}
+//	groovyGradle {
+//		target '*.gradle' // default target of groovyGradle
+//		greclipse()
+//	}
+//}
