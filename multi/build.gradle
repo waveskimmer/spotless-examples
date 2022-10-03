@@ -1,27 +1,37 @@
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+}
+
 plugins {
 	id 'groovy'
 	id "com.diffplug.spotless" version "6.11.0"
 }
 
+//  this needs to be here to make it work...
+repositories {
+	mavenCentral()
+}
+
 group 'org.example'
 version '1.0-SNAPSHOT'
 
-allprojects {
-	spotless {
-		java {
-			googleJavaFormat()
-			indentWithSpaces()
-			trimTrailingWhitespace()
-		}
-		groovy {
-			excludeJava()
-			greclipse()
-			indentWithSpaces()
-			trimTrailingWhitespace()
-		}
-		groovyGradle {
-			greclipse()
-		}
+spotless {
+	java {
+		googleJavaFormat()
+		indentWithSpaces()
+		trimTrailingWhitespace()
+	}
+	groovy {
+		excludeJava()
+		greclipse()
+		indentWithSpaces()
+		trimTrailingWhitespace()
+	}
+	groovyGradle {
+		greclipse()
+		indentWithSpaces()
 	}
 }
 
