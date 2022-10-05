@@ -1,4 +1,3 @@
-rootProject.name = 'spotless'
+rootProject.name = 'spotless-multi'
 
 include ':agentx'
-
