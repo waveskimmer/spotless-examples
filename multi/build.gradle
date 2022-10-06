@@ -10,10 +10,15 @@ plugins {
     id "com.diffplug.spotless" version "6.11.0"
 }
 apply from: 'spotless/predeclare.gradle'
-apply from: 'spotless/spotless.gradle'
 
 
 allprojects {
     group 'org.example'
     version '1.0-SNAPSHOT'
+
+    spotless {
+        java {
+            prettier()
+        }
+    }
 }
