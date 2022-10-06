@@ -1,0 +1,14 @@
+
+spotless {
+    predeclareDepsFromBuildscript()
+}
+spotlessPredeclare {
+    java {
+        prettier(['prettier': '2.0.5', 'prettier-plugin-java': '0.8.0'])
+        googleJavaFormat()
+    }
+    groovy {
+        greclipse()
+    }
+    kotlin { ktfmt() }
+}

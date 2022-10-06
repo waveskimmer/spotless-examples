@@ -9,15 +9,16 @@ plugins {
     id 'groovy'
     id "com.diffplug.spotless" version "6.11.0"
 }
+apply from: 'spotless/predeclare.gradle'
+apply from: 'spotless/spotless.gradle'
+
 
 repositories {
-    mavenCentral()
+    maven { url "https://binrepo.target.com/artifactory/mavencentral" }
 }
 
-apply from: 'spotless.gradle'
 
 allprojects {
-    apply plugin: 'java'
 
     repositories {
         mavenCentral()

@@ -5,7 +5,7 @@ plugins {
     id "com.diffplug.spotless" version "6.11.0"
 }
 
-apply from: '../spotless.gradle'
+apply from: '../spotless/spotless.gradle'
 
 dependencies {
     implementation 'org.apache.groovy:groovy:4.0.5'
